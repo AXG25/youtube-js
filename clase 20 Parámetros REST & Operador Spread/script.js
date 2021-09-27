@@ -1,0 +1,53 @@
+/* **********     Curso JavaScript: 20. Parámetros REST(RESTO) & Operador Spread(PROPAGAR) - #jonmircha     ********** */
+
+      /*
+        ¿Qué son los parámetros JS?
+Una función JavaScript puede requerir ser llamada pasándole cierta
+ información o no requerir información. ... Cuando una función recibe
+  un parámetro dicho parámetro funciona como si se tratara de una variable 
+  disponible para la función inicializada con el valor que se le pasa a 
+  la función.
+*/
+
+      /*
+        La sintaxis de los parámetros rest nos permiten representar un
+     número indefinido de argumentos como un array.
+     */
+
+      /*
+        los parametros rest son una forma de ir creando parametros
+         infinitos por ejemplo si tienes un arreglo y no sabes cuantos 
+         valores vas a recibir y puede que con esos valores vayas a hacer 
+         ciertas operaciones o procesos
+      */
+
+      /*
+      para definir los parametros rest debes colocar tres puntos suspensivos
+       antes del nombre dondeestan guardados los posibles vlaores infinitos
+      */
+
+      /*
+      supongamos que necesito hacer una suma de valores que aun no tengo 
+      entonces seria de mucha utilidad un parametro rest
+      */
+
+      function sumar(a, b, ...c) {
+        /*todo lo que llegue despues de c vamos a considerarlo un arreglo*/
+        let resultado = a + b;
+        c.forEach(function (n) {
+          /*El método forEach() ejecuta la función indicada una vez por cada elemento del array.*/
+          resultado += n;
+        });
+        return resultado; /*La sentencia return finaliza la ejecución de la función y especifica un valor para ser devuelto a quien llama a la función.*/
+      }
+      console.log(sumar(1, 2));
+      console.log(sumar(1, 2, 3));
+      console.log(sumar(1, 2, 3, 4));
+      console.log(sumar(1, 2, 3, 4, 5));
+      console.log(sumar(1, 2, 3, 4, 5, 6));
+      console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+      // const arr1 = [1, 2, 3, 4, 5],
+      //   arr2 = [6, 7, 8, 9, 0];
+      // console.log(arr1, arr2);
+      // const arr3 = [...arr1, ...arr2];
+      // console.log(arr3);

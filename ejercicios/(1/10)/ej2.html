@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".*/
+        let texto = prompt("introduce un texto")
+        let recortar = Number(prompt(`este es tu texto: ${texto} 
+        ahora vamos a recortarlo por favor cuenta cada una de las letras
+        y espacios en blanco... si me das el numero desde donde quieres recortar eliminare esa parte y dejare el resto
+        tmabien puedes decirme desde donde y hasta donde quieres que recorte , por ejemplo 4,12 `))
+        
+        alert(texto.substring(recortar))
+        
+    </script>
+</body>
+</html>

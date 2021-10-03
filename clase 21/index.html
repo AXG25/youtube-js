@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<h1>Funciones Flecha</h1>
+ <p>Una expresión de función flecha es una alternativa compacta a una expresión de función tradicional, pero es limitada y no se puede utilizar en todas las situaciones.</p> 
+  
+  <h3>Diferencias y limitaciones:</h3>
+  
+  <p>
+    <li>No tiene sus propios enlaces a this o super y no se debe usar como métodos.</li>
+ <li>No tiene argumentos o palabras clave new.target.</li> 
+  <li>No apta para los métodos call, apply y bind, que generalmente se basan en establecer un ámbito o alcance</li>
+  <li>No se puede utilizar como constructor.</li>
+  <li>No se puede utilizar yield dentro de su cuerpo.</li>
+  </p>
+  <p>Es una nueva forma de definir funciones anonimas que sean expresadas</p>
+<body>
+    <script>
+         /* **********     Curso JavaScript: 21. Arrow Functions(funciones flecha) - #jonmircha     ********** */
+    
+         /*function expresada : //no puedes invocar la funcion  antes de escribir la funcion
+         const saludar = function (){
+           console.log(hola)
+         }
+         saludar()*/
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+
+/*function declarada : //la invocacion puede ser incluso antes de escribir la funcion
+saludar() 
+
+         function saludar (){
+           console.log(hola)
+         }*/
+    
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*una arrow function simplemente es quitar la palabara function y
+ entre el () y la llave de apertura { hacemos algo asi: ()=>{ */
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*cuando tu funcion tiene solo una linea de instrucciones puedes omitir
+ las llaves {} y dejar la funcion flecha asi :*/
+         const saludar = () => console.log(`Hola`);
+    saludar(); 
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*cuando una funcion flecha no recibe parametros forzozamente debemos poner
+ parentesis () pero cuando una funcion flecha recibe SOLO UN parametro no es 
+ necesario que este vaya entre parentesis*/
+     const saludar = nombre => console.log(`Hola ${nombre}`);
+    saludar("Juan Carlos");
+ 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+     /*const sumar = function (a, b) {
+      return a + b;
+    } */
+      // = a:
+     const sumar = (a, b) => a + b;
+     console.log(sumar(9, 9));
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*Cunado hacemos una funcion flecha de varias lineas forzozamente debemos implementar una
+ invocacion*/ 
+     const funcionDeVariasLineas = () => {
+       console.log("Uno");
+       console.log("Dos");
+       console.log("Tres");
+     }
+     funcionDeVariasLineas();//invocacion 
+
+//-------------------------------------------------------------------------------------------------------------------------------------------
+
+     const numeros = [1, 2, 3, 4, 5];
+     numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+
+     
+       function Perro() {
+        console.log(this);
+      }
+      Perro(); 
+
+         const perro = {
+          nombre: "kenai",
+          ladrar() {
+            console.log(this)
+          }
+        }
+        perro.ladrar(); 
+
+    </script>
+</body>
+</html>
